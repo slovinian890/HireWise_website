@@ -3,9 +3,924 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HireWise</title>
+    <title>HireWise — Local Pros Compete for Your Job</title>
+    <meta name="description" content="Post a job in minutes, get competitive offers from verified local professionals and pay only when the work is done. The fair way to hire electricians, plumbers, painters and more.">
+    <link rel="canonical" href="https://hirewise.example/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0f1524">
+    <meta name="color-scheme" content="light">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HireWise">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:url" content="https://hirewise.example/">
+    <meta property="og:title" content="HireWise — Find the right pro at the right price">
+    <meta property="og:description" content="Post your job, compare offers from verified local pros and pay only when the work is done.">
+    <meta property="og:image" content="https://hirewise.example/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="HireWise app showing active jobs nearby and competing offers from local pros">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HireWise — Find the right pro at the right price">
+    <meta name="twitter:description" content="Post your job, compare offers from verified local pros and pay only when the work is done.">
+    <meta name="twitter:image" content="https://hirewise.example/og-image.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" as="image" href="images/screens/home-find.webp" type="image/webp">
+    <script>document.documentElement.classList.add("js");</script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg class="sprite" aria-hidden="true" focusable="false">
+        <symbol id="logo-mark" viewBox="0 0 32 32">
+            <rect width="32" height="32" rx="9" fill="#0d9b6a"/>
+            <path d="M9.5 9.5v13M22.5 9.5v13" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path d="m12.5 16 2.5 2.5 4.5-5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+        <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></symbol>
+        <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+        <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></symbol>
+        <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+        <symbol id="i-chevron-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
+        <symbol id="i-chevron-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+        <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></symbol>
+        <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></symbol>
+        <symbol id="i-trending" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+        <symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+        <symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+        <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+        <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></symbol>
+        <symbol id="i-hammer" viewBox="0 0 24 24"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></symbol>
+        <symbol id="i-roller" viewBox="0 0 24 24"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></symbol>
+        <symbol id="i-wind" viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></symbol>
+        <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4M22 5h-4"/></symbol>
+        <symbol id="i-car" viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></symbol>
+        <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+        <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+        <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+        <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></symbol>
+        <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+    </svg>
+
+    <header class="site-header" data-header>
+        <div class="header-inner">
+            <a class="brand" href="#top" aria-label="HireWise home">
+                <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"></use></svg>
+                <span>HireWise</span>
+            </a>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <a href="#how">How it works</a>
+                <a href="#features">Features</a>
+                <a href="#tour">App tour</a>
+                <a href="#trust">Trust &amp; safety</a>
+                <a href="#pros">For pros</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <a class="btn btn-primary btn-sm" href="#download">Get the app</a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+                    <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"></use></svg>
+                    <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"></use></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="pill"><span class="pill-dot" aria-hidden="true"></span>Local pros, competing for your job</p>
+                    <h1>Find the right pro <span class="hl">at the right price.</span></h1>
+                    <p class="lead">Post your job in minutes, get competitive offers from verified local professionals, and pay only when the work is done.</p>
+                    <div class="hero-ctas">
+                        <a class="btn btn-primary btn-lg" href="#download">
+                            Post a job — it’s free
+                            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                        </a>
+                        <a class="btn btn-ghost btn-lg" href="#pros">Join as a pro</a>
+                    </div>
+                    <dl class="hero-stats">
+                        <div>
+                            <dt>Verified pros</dt>
+                            <dd>10,000+</dd>
+                        </div>
+                        <div>
+                            <dt>Jobs done</dt>
+                            <dd>50,000+</dd>
+                        </div>
+                        <div>
+                            <dt>Average rating</dt>
+                            <dd><svg class="icon icon-star" aria-hidden="true"><use href="#i-star"></use></svg>4.8</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="phone hero-phone hero-phone--left">
+                        <img src="images/screens/professional-profile.webp" width="720" height="1565" alt="Profile of a verified electrician with rating, completed jobs and success rate" decoding="async">
+                    </div>
+                    <div class="phone hero-phone hero-phone--right">
+                        <img src="images/screens/offer-comparison.webp" width="720" height="1565" alt="Comparing twelve offers for a ceiling light installation, with the best match highlighted" decoding="async">
+                    </div>
+                    <div class="phone hero-phone hero-phone--front">
+                        <img src="images/screens/home-find.webp" width="720" height="1565" alt="HireWise home screen listing active jobs nearby with budgets and offer counts" fetchpriority="high" decoding="async">
+                    </div>
+
+                    <div class="float-card float--notify" aria-hidden="true">
+                        <span class="float-ico"><svg class="icon" aria-hidden="true"><use href="#i-bell"></use></svg></span>
+                        <span class="float-text" data-notify>
+                            <b>New offer received</b>
+                            <small>Bathroom Plumbing Repair · $320</small>
+                        </span>
+                        <span class="float-time">now</span>
+                    </div>
+                    <div class="float-card float--pro" aria-hidden="true">
+                        <img class="avatar" src="images/avatars/tomaz.webp" width="40" height="40" alt="">
+                        <span>
+                            <b>Tomaž Novak <svg class="icon icon-badge" aria-hidden="true"><use href="#i-badge"></use></svg></b>
+                            <small><svg class="icon icon-star" aria-hidden="true"><use href="#i-star"></use></svg> 4.9 · 247 jobs done</small>
+                        </span>
+                        <span class="tag tag--green">Best match</span>
+                    </div>
+                    <div class="float-card float--escrow" aria-hidden="true">
+                        <span class="float-ico"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+                        <span>
+                            <b>$750 held in escrow</b>
+                            <small>Released when you confirm the job</small>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cats" aria-label="Popular categories">
+            <p class="cats-label">Pros for every kind of job</p>
+            <div class="marquee">
+                <ul class="marquee-track">
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-zap"></use></svg></span>Electrician</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-droplet"></use></svg></span>Plumber</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-hammer"></use></svg></span>Carpenter</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-roller"></use></svg></span>Painter</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-wind"></use></svg></span>HVAC</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"></use></svg></span>Cleaning</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-car"></use></svg></span>Mechanic</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-truck"></use></svg></span>Moving</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-leaf"></use></svg></span>Landscaping</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-wrench"></use></svg></span>Handyman</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg></span>IT &amp; Repair</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon" aria-hidden="true"><use href="#i-camera"></use></svg></span>Photography</li>
+                </ul>
+                <ul class="marquee-track marquee-track--clone" aria-hidden="true">
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-zap"></use></svg></span>Electrician</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-droplet"></use></svg></span>Plumber</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-hammer"></use></svg></span>Carpenter</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-roller"></use></svg></span>Painter</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-wind"></use></svg></span>HVAC</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-sparkles"></use></svg></span>Cleaning</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-car"></use></svg></span>Mechanic</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-truck"></use></svg></span>Moving</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-leaf"></use></svg></span>Landscaping</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-wrench"></use></svg></span>Handyman</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-monitor"></use></svg></span>IT &amp; Repair</li>
+                    <li class="cat-chip"><span class="cat-ico"><svg class="icon"><use href="#i-camera"></use></svg></span>Photography</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section how" id="how" data-how>
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">How it works</p>
+                    <h2>From “I need a pro” to “job done” in four steps.</h2>
+                    <p class="lead">Whether you’re hiring or offering your skills, HireWise keeps every step simple, fair and protected.</p>
+                    <div class="segmented" role="tablist" aria-label="Choose your side">
+                        <button type="button" role="tab" id="side-customer" aria-selected="true" aria-controls="how-customer" data-side-tab>I need a pro</button>
+                        <button type="button" role="tab" id="side-pro" aria-selected="false" aria-controls="how-pro" tabindex="-1" data-side-tab>I’m a pro</button>
+                    </div>
+                </div>
+
+                <div class="how-panel" id="how-customer" role="tabpanel" aria-labelledby="side-customer" data-how-panel>
+                    <ol class="steps" role="tablist" aria-orientation="vertical" aria-label="Steps for customers">
+                        <li role="presentation">
+                            <button class="step is-active" type="button" role="tab" aria-selected="true" aria-controls="how-customer-screen" data-step>
+                                <span class="step-num">1</span>
+                                <span class="step-text">
+                                    <span class="step-title">Post your job</span>
+                                    <span class="step-desc">Pick a category, describe the work, add photos and set a budget. It takes about two minutes.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-customer-screen" tabindex="-1" data-step>
+                                <span class="step-num">2</span>
+                                <span class="step-text">
+                                    <span class="step-title">Get competing offers</span>
+                                    <span class="step-desc">Verified pros nearby send their best price while bidding is open — usually within hours.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-customer-screen" tabindex="-1" data-step>
+                                <span class="step-num">3</span>
+                                <span class="step-text">
+                                    <span class="step-title">Compare, chat &amp; negotiate</span>
+                                    <span class="step-desc">Weigh price against rating, experience and availability. Counter an offer or chat before you decide.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-customer-screen" tabindex="-1" data-step>
+                                <span class="step-num">4</span>
+                                <span class="step-text">
+                                    <span class="step-title">Pay when it’s done</span>
+                                    <span class="step-desc">Your payment is held in escrow and released only after you confirm the job is complete.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                    </ol>
+                    <div class="how-visual">
+                        <div class="phone how-phone">
+                            <div class="screen-stack" id="how-customer-screen" role="tabpanel" aria-label="Step preview">
+                                <img class="is-active" src="images/screens/create-category.webp" width="720" height="1565" alt="Choosing a category for a new job, with Electrician selected" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/offer-comparison.webp" width="720" height="1565" alt="Twelve offers sorted by best match, with prices, ratings and availability" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/counter-offer.webp" width="720" height="1565" alt="Sending a counter-offer of $700 to a professional who offered $800" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/payment.webp" width="720" height="1558" alt="Payment details with the amount held in escrow until the job is confirmed" loading="lazy" decoding="async" data-step-screen>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="how-panel" id="how-pro" role="tabpanel" aria-labelledby="side-pro" data-how-panel hidden>
+                    <ol class="steps" role="tablist" aria-orientation="vertical" aria-label="Steps for professionals">
+                        <li role="presentation">
+                            <button class="step is-active" type="button" role="tab" aria-selected="true" aria-controls="how-pro-screen" data-step>
+                                <span class="step-num">1</span>
+                                <span class="step-text">
+                                    <span class="step-title">Find jobs near you</span>
+                                    <span class="step-desc">Browse open jobs by trade and distance, with the budget range and time left on every listing.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-pro-screen" tabindex="-1" data-step>
+                                <span class="step-num">2</span>
+                                <span class="step-text">
+                                    <span class="step-title">Send your offer</span>
+                                    <span class="step-desc">Set your price, timing and a short note. Live market activity shows what others are bidding.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-pro-screen" tabindex="-1" data-step>
+                                <span class="step-num">3</span>
+                                <span class="step-text">
+                                    <span class="step-title">Get hired &amp; do the work</span>
+                                    <span class="step-desc">Agree on the details in chat, then track the job from schedule to completion.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="step" type="button" role="tab" aria-selected="false" aria-controls="how-pro-screen" tabindex="-1" data-step>
+                                <span class="step-num">4</span>
+                                <span class="step-text">
+                                    <span class="step-title">Get paid &amp; reviewed</span>
+                                    <span class="step-desc">Payment is released as soon as the client confirms, and every review grows your reputation.</span>
+                                </span>
+                                <span class="step-progress" aria-hidden="true"></span>
+                            </button>
+                        </li>
+                    </ol>
+                    <div class="how-visual">
+                        <div class="phone how-phone">
+                            <div class="screen-stack" id="how-pro-screen" role="tabpanel" aria-label="Step preview">
+                                <img class="is-active" src="images/screens/pro-dashboard.webp" width="720" height="1619" alt="Find Jobs screen for professionals with nearby jobs and budget ranges" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/submit-offer.webp" width="720" height="1565" alt="Submitting an offer of $750 with estimated time and a message to the customer" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/active-job.webp" width="720" height="1565" alt="Active job with agreed price, date and progress timeline" loading="lazy" decoding="async" data-step-screen>
+                                <img src="images/screens/completed-jobs.webp" width="720" height="1565" alt="Completed jobs with monthly and total earnings" loading="lazy" decoding="async" data-step-screen>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features" id="features">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Features</p>
+                    <h2>Everything you need to hire with confidence.</h2>
+                    <p class="lead">HireWise turns a stressful search into a simple, fair competition — with protection built in at every step.</p>
+                </div>
+
+                <div class="bento">
+                    <article class="card card--wide card--split" data-reveal>
+                        <div class="card-copy">
+                            <h3>Compare offers side by side</h3>
+                            <p>Every bid shows the price, the pro’s rating, completed jobs, availability and a personal note, so you choose on value — not just the lowest number.</p>
+                            <ul class="check-list">
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Sort by best match, price or rating</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>See what similar jobs cost in your area</li>
+                                <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Counter an offer before you accept</li>
+                            </ul>
+                        </div>
+                        <div class="card-visual" aria-hidden="true">
+                            <div class="offer-stack">
+                                <div class="note note--green">
+                                    <svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg>
+                                    <span>Similar jobs typically cost <b>$500–$850</b> in your area.</span>
+                                </div>
+                                <div class="offer-pile">
+                                    <div class="offer-card offer-card--behind">
+                                        <div class="offer-top">
+                                            <span></span>
+                                            <div class="offer-price"><strong>$650</strong><span>Total offer</span></div>
+                                        </div>
+                                        <div class="offer-pro">
+                                            <img class="avatar" src="images/avatars/luka.webp" width="40" height="40" alt="" loading="lazy">
+                                            <div>
+                                                <div class="offer-name">Luka Zupančič <svg class="icon icon-badge"><use href="#i-badge"></use></svg></div>
+                                                <div class="offer-rating"><svg class="icon icon-star"><use href="#i-star"></use></svg><b>4.7</b> (64 reviews)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="offer-card is-best">
+                                        <div class="offer-top">
+                                            <span class="tag tag--green">Best match</span>
+                                            <div class="offer-price"><strong>$750</strong><span>Total offer</span></div>
+                                        </div>
+                                        <div class="offer-pro">
+                                            <img class="avatar" src="images/avatars/tomaz.webp" width="40" height="40" alt="" loading="lazy">
+                                            <div>
+                                                <div class="offer-name">Tomaž Novak <svg class="icon icon-badge"><use href="#i-badge"></use></svg></div>
+                                                <div class="offer-rating"><svg class="icon icon-star"><use href="#i-star"></use></svg><b>4.9</b> (128 reviews)</div>
+                                            </div>
+                                        </div>
+                                        <div class="offer-meta">
+                                            <span><svg class="icon"><use href="#i-briefcase"></use></svg>247 completed</span>
+                                            <span><svg class="icon"><use href="#i-clock"></use></svg>Available tomorrow</span>
+                                        </div>
+                                        <p class="offer-note">“I can complete the installation in about 3 hours. Licensed electrician with all tools.”</p>
+                                        <div class="offer-actions">
+                                            <span class="mini-btn">Profile</span>
+                                            <span class="mini-btn">Counter</span>
+                                            <span class="mini-btn mini-btn--primary">Accept</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal style="--d: .08s">
+                        <h3>Verified pros only</h3>
+                        <p>Identity, phone and email checks for every professional, plus licence review for regulated trades.</p>
+                        <div class="card-visual" aria-hidden="true">
+                            <div class="trust-card">
+                                <div class="trust-level">
+                                    <div class="trust-level-head"><span>Trust level</span><span>3 of 5 completed</span></div>
+                                    <div class="trust-score"><strong>85</strong><span>/100 score</span></div>
+                                    <div class="meter"><span></span></div>
+                                </div>
+                                <ul class="verify-list">
+                                    <li><span class="v-ico"><svg class="icon"><use href="#i-check"></use></svg></span><span><b>Identity verification</b><small>Verified on May 24</small></span></li>
+                                    <li><span class="v-ico"><svg class="icon"><use href="#i-check"></use></svg></span><span><b>Phone number</b><small>Verified on May 24</small></span></li>
+                                    <li><span class="v-ico v-ico--pending"><svg class="icon"><use href="#i-clock"></use></svg></span><span><b>Professional licence</b><small>Electrician &amp; plumbing</small></span><span class="tag tag--amber">Reviewing</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card card--dark" data-reveal>
+                        <h3>Pay safely with escrow</h3>
+                        <p>Your money is held securely and released to the pro only when you confirm the work is done.</p>
+                        <div class="card-visual" aria-hidden="true">
+                            <div class="pay-card">
+                                <div class="pay-label">Payment summary</div>
+                                <div class="pay-row"><span>Service fee</span><span>$750.00</span></div>
+                                <div class="pay-row pay-row--muted"><span>Platform fee</span><span>$37.50</span></div>
+                                <div class="pay-total"><span>Total amount</span><strong>$787.50</strong></div>
+                                <ol class="timeline">
+                                    <li><span class="t-dot t-dot--done"><svg class="icon"><use href="#i-check"></use></svg></span>Payment authorised</li>
+                                    <li><span class="t-dot t-dot--done"><svg class="icon"><use href="#i-check"></use></svg></span>Job in progress</li>
+                                    <li><span class="t-dot t-dot--current"></span>Job completed — awaiting your release</li>
+                                    <li class="is-todo"><span class="t-dot t-dot--todo"></span>Payment released</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal style="--d: .08s">
+                        <h3>Chat before you commit</h3>
+                        <p>Sort out the details with your pro in the app, and keep every agreement in one place.</p>
+                        <div class="card-visual" aria-hidden="true">
+                            <div class="chat">
+                                <div class="chat-head">
+                                    <img class="avatar" src="images/avatars/dave.webp" width="34" height="34" alt="" loading="lazy">
+                                    <span><b>Dave Mitchell</b><span class="online">Online</span></span>
+                                </div>
+                                <div class="chat-body">
+                                    <span class="chat-sys">Offer accepted for $750 · 10:15</span>
+                                    <span class="bubble bubble--in">Thanks for choosing me! I’ll bring all the equipment. Is Thursday at 2 PM okay?</span>
+                                    <span class="bubble bubble--out">Perfect, I’ll clear the rooms. See you then!</span>
+                                    <span class="typing"><span></span><span></span><span></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card" data-reveal style="--d: .16s">
+                        <h3>Track every step</h3>
+                        <p>A live timeline shows exactly where your job stands, from the first offer to the final review.</p>
+                        <div class="card-visual" aria-hidden="true">
+                            <ol class="progress">
+                                <li><time>Aug 22 · 10:30</time><b>Job posted</b><span>Awaiting professional offers</span></li>
+                                <li><time>Aug 22 · 11:45</time><b>12 offers received</b><span>Highest $850, lowest $650</span></li>
+                                <li><time>Aug 23 · 9:00</time><b>Offer accepted ($750)</b><span>Secured with Dave Miller</span></li>
+                                <li class="is-current"><time>Aug 26 · 14:00</time><b>Job scheduled to begin</b><span>Preparations &amp; gear ready</span></li>
+                            </ol>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section tour" id="tour" data-tour>
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow eyebrow--light">App tour</p>
+                    <h2>Designed for every step of the job.</h2>
+                    <p class="lead">More than 30 screens, one clear flow. Take a look at the parts of HireWise you’ll use most.</p>
+                    <div class="tour-tabs" role="tablist" aria-label="App tour sections">
+                        <button class="tour-tab" type="button" role="tab" aria-selected="true" aria-controls="tour-panel" data-tour-tab="post">Post a job</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-tab="hire">Compare &amp; hire</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-tab="track">Track &amp; pay</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-tab="pro">For pros</button>
+                        <button class="tour-tab" type="button" role="tab" aria-selected="false" aria-controls="tour-panel" tabindex="-1" data-tour-tab="account">Account &amp; safety</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-panel" id="tour-panel" role="tabpanel" aria-label="App screens">
+                <ul class="tour-track" tabindex="0" aria-label="App screens" data-tour-track>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-category.webp" width="720" height="1565" alt="Category picker with twelve trades" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 1</span><strong>Pick a category</strong>Twelve trades, from electricians to photographers.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-details.webp" width="720" height="1565" alt="Describing the job with a title, details and number of fixtures" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 2</span><strong>Describe the job</strong>Title, details and quantities, so pros can quote accurately.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-photos.webp" width="720" height="1565" alt="Uploading photos of the job" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 3</span><strong>Add photos</strong>Up to ten photos or clips for more accurate estimates.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-location.webp" width="720" height="1565" alt="Setting the job location with address privacy options" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 4</span><strong>Set the location</strong>Pros see your approximate area. Your address stays private.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-budget.webp" width="720" height="1565" alt="Setting a budget range of $500 to $900" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 5</span><strong>Set your budget</strong>A fixed price or a range, with local price guidance.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-schedule.webp" width="720" height="1565" alt="Choosing a date and preferred time of day" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 6</span><strong>Pick a date</strong>As soon as possible, a specific day or whenever suits.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/create-bidding.webp" width="720" height="1565" alt="Choosing how long bidding stays open" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Step 7</span><strong>Open the bidding</strong>From 2 to 48 hours. Hire any time before it closes.</p>
+                    </li>
+                    <li class="tour-item" data-group="post">
+                        <div class="phone"><img src="images/screens/confirmation.webp" width="720" height="1558" alt="Job posted successfully confirmation" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><span class="tour-step">Done</span><strong>You’re live</strong>Verified local pros are notified right away.</p>
+                    </li>
+
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/home-find.webp" width="720" height="1565" alt="Home screen with active jobs nearby" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Jobs near you</strong>Budgets, offer counts and time left at a glance.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/search-filters.webp" width="720" height="1565" alt="Advanced filters for category, distance, budget and rating" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Filter precisely</strong>Distance, budget, minimum rating and verified-only.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone phone--scroll"><img src="images/screens/job-details.webp" width="720" height="1825" alt="Job details with description, photos and approximate location" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Job details</strong>Description, photos, approximate location and timing.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/offer-comparison.webp" width="720" height="1565" alt="Comparing offers sorted by best match" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Compare offers</strong>Sort by best match, lowest price or highest rating.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/professional-profile.webp" width="720" height="1565" alt="Professional profile with badges, stats and portfolio" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Check the pro</strong>Badges, reviews, portfolio and response time.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/counter-offer.webp" width="720" height="1565" alt="Negotiating an offer with a counter-offer" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Negotiate</strong>Send a counter-offer with a message in one tap.</p>
+                    </li>
+                    <li class="tour-item" data-group="hire" hidden>
+                        <div class="phone"><img src="images/screens/chat.webp" width="720" height="1558" alt="Chat between a customer and a professional" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Chat</strong>Agree on the details before the job starts.</p>
+                    </li>
+
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone phone--scroll"><img src="images/screens/my-jobs.webp" width="720" height="1617" alt="My jobs with offers received and lowest offer" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>My jobs</strong>Every job, its offers and the lowest bid in one place.</p>
+                    </li>
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone"><img src="images/screens/active-job.webp" width="720" height="1565" alt="Active job with agreed price and schedule" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Active job</strong>Agreed price, schedule and progress at a glance.</p>
+                    </li>
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone"><img src="images/screens/job-progress.webp" width="720" height="1565" alt="Detailed job progress timeline" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Live timeline</strong>Every milestone, from the first offer to the start date.</p>
+                    </li>
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone"><img src="images/screens/job-completion.webp" width="720" height="1565" alt="Confirming job completion with a feedback checklist" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Confirm completion</strong>A quick checklist before you release payment.</p>
+                    </li>
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone"><img src="images/screens/payment.webp" width="720" height="1558" alt="Payment details with escrow timeline" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Release payment</strong>Escrow keeps your money safe until you confirm.</p>
+                    </li>
+                    <li class="tour-item" data-group="track" hidden>
+                        <div class="phone"><img src="images/screens/rating.webp" width="720" height="1565" alt="Rating a professional on five criteria" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Rate the pro</strong>Score communication, quality, punctuality and value.</p>
+                    </li>
+
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone phone--scroll"><img src="images/screens/pro-dashboard.webp" width="720" height="1619" alt="Find jobs dashboard for professionals" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Find jobs</strong>Jobs near you with the budget range and time left.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone"><img src="images/screens/submit-offer.webp" width="720" height="1565" alt="Submitting an offer with price and completion time" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Submit an offer</strong>Price, timing and a note, plus live market activity.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone"><img src="images/screens/my-offers.webp" width="720" height="1565" alt="List of submitted offers and their status" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Track your offers</strong>Pending, reviewed, accepted or expired.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone phone--scroll"><img src="images/screens/customer-profile.webp" width="720" height="1587" alt="Customer profile with verified details and reviews" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Know the client</strong>Verified details and reviews from other pros.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone"><img src="images/screens/portfolio.webp" width="720" height="1565" alt="Portfolio of completed lighting and wiring work" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Show your work</strong>A portfolio that sells your skills for you.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone"><img src="images/screens/reviews.webp" width="720" height="1565" alt="Reviews with a 4.9 average rating" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Build your reputation</strong>Ratings and reviews from real customers.</p>
+                    </li>
+                    <li class="tour-item" data-group="pro" hidden>
+                        <div class="phone"><img src="images/screens/completed-jobs.webp" width="720" height="1565" alt="Completed jobs and earnings overview" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Track earnings</strong>Monthly and total earnings, plus one-tap rehire.</p>
+                    </li>
+
+                    <li class="tour-item" data-group="account" hidden>
+                        <div class="phone"><img src="images/screens/messages.webp" width="720" height="1558" alt="Messages grouped by job" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Messages</strong>Every conversation, grouped by job.</p>
+                    </li>
+                    <li class="tour-item" data-group="account" hidden>
+                        <div class="phone phone--scroll"><img src="images/screens/notifications.webp" width="720" height="1626" alt="Notifications for offers, messages and payments" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Notifications</strong>New offers, reminders and payment updates.</p>
+                    </li>
+                    <li class="tour-item" data-group="account" hidden>
+                        <div class="phone"><img src="images/screens/verification.webp" width="720" height="1558" alt="Verification center with trust score" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Verification center</strong>Identity, phone, email, licence and business checks.</p>
+                    </li>
+                    <li class="tour-item" data-group="account" hidden>
+                        <div class="phone"><img src="images/screens/settings.webp" width="720" height="1558" alt="Settings with account, notifications and Professional Mode" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Settings</strong>Switch on Professional Mode whenever you’re ready.</p>
+                    </li>
+                    <li class="tour-item" data-group="account" hidden>
+                        <div class="phone"><img src="images/screens/report-problem.webp" width="720" height="1565" alt="Reporting a problem with a job" loading="lazy" decoding="async"></div>
+                        <p class="tour-caption"><strong>Report a problem</strong>Support reviews every report within 24 hours.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="wrap tour-controls">
+                <button class="round-btn" type="button" aria-label="Previous screens" data-tour-prev>
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg>
+                </button>
+                <button class="round-btn" type="button" aria-label="Next screens" data-tour-next>
+                    <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="section trust" id="trust">
+            <div class="wrap trust-grid">
+                <div class="trust-visual" data-reveal>
+                    <div class="trust-illus">
+                        <img src="images/illustration-trust.webp" width="640" height="640" alt="Illustration of a homeowner and a professional shaking hands under a Trust &amp; Agreement banner" loading="lazy" decoding="async">
+                    </div>
+                    <div class="phone trust-phone">
+                        <img src="images/screens/verification.webp" width="720" height="1558" alt="Verification center showing a trust score of 85 out of 100 and completed checks" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="trust-copy">
+                    <div data-reveal>
+                        <p class="eyebrow">Trust &amp; safety</p>
+                        <h2>Built on trust, from the first bid to the final payment.</h2>
+                        <p class="lead">Every pro is checked before they can bid, and every payment is protected until you’re happy with the work.</p>
+                    </div>
+                    <ul class="trust-list">
+                        <li data-reveal>
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+                            <h3>Verified pros only</h3>
+                            <p>Identity, phone and email checks for everyone, plus licence and business verification where trades require it.</p>
+                        </li>
+                        <li data-reveal style="--d: .06s">
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+                            <h3>Escrow-protected payments</h3>
+                            <p>Your money is held securely and released only when you confirm the job is done.</p>
+                        </li>
+                        <li data-reveal>
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg></span>
+                            <h3>Your address stays private</h3>
+                            <p>Pros see your approximate area. Your exact address goes only to the pro you hire.</p>
+                        </li>
+                        <li data-reveal style="--d: .06s">
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg></span>
+                            <h3>Honest, verified reviews</h3>
+                            <p>Only completed jobs can be rated — on communication, quality, punctuality and value.</p>
+                        </li>
+                        <li data-reveal>
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-chat"></use></svg></span>
+                            <h3>Safe in-app messaging</h3>
+                            <p>Keep every agreement in one place, with reminders never to share payment details in chat.</p>
+                        </li>
+                        <li data-reveal style="--d: .06s">
+                            <span class="trust-ico"><svg class="icon" aria-hidden="true"><use href="#i-flag"></use></svg></span>
+                            <h3>Help when you need it</h3>
+                            <p>Report a problem in a few taps. Our support team reviews every report within 24 hours.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pros" id="pros">
+            <div class="wrap">
+                <div class="pros-panel" data-reveal>
+                    <div class="pros-copy">
+                        <p class="eyebrow eyebrow--light">For professionals</p>
+                        <h2>Turn your skills into steady, local work.</h2>
+                        <p class="lead">Browse jobs near you, send an offer in under a minute and get paid as soon as the client confirms. No cold calls, no chasing invoices.</p>
+                        <ul class="pros-list">
+                            <li>
+                                <span class="pros-ico"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></span>
+                                <span><strong>Jobs that fit your trade</strong>Filter by category, distance and budget, and see how much competition each job has.</span>
+                            </li>
+                            <li>
+                                <span class="pros-ico"><svg class="icon" aria-hidden="true"><use href="#i-award"></use></svg></span>
+                                <span><strong>Win on more than price</strong>Your rating, reviews, portfolio and badges sit right next to your quote.</span>
+                            </li>
+                            <li>
+                                <span class="pros-ico"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+                                <span><strong>Payment you can count on</strong>Clients pay into escrow up front, so the money is there before you start.</span>
+                            </li>
+                            <li>
+                                <span class="pros-ico"><svg class="icon" aria-hidden="true"><use href="#i-trending"></use></svg></span>
+                                <span><strong>Grow your reputation</strong>Every job adds reviews, repeat clients and earnings you can track.</span>
+                            </li>
+                        </ul>
+                        <div class="pro-mode" data-pro-mode>
+                            <span class="pro-mode-text">
+                                <strong>Professional Mode</strong>
+                                <span data-pro-status aria-live="polite">Toggle to start receiving client jobs</span>
+                            </span>
+                            <button class="switch" type="button" role="switch" aria-checked="false" aria-label="Professional Mode" data-pro-switch></button>
+                        </div>
+                        <div class="pros-ctas">
+                            <a class="btn btn-primary btn-lg" href="#download">
+                                Start earning with HireWise
+                                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pros-visual">
+                        <div class="phone pros-phone pros-phone--back">
+                            <img src="images/screens/completed-jobs.webp" width="720" height="1565" alt="Earnings overview showing $3,450 this month" loading="lazy" decoding="async">
+                        </div>
+                        <div class="phone pros-phone pros-phone--front">
+                            <img src="images/screens/pro-dashboard.webp" width="720" height="1619" alt="Find Jobs screen listing nearby jobs with budgets and a Submit Offer button" loading="lazy" decoding="async">
+                        </div>
+                        <div class="float-card float--job" aria-hidden="true">
+                            <span class="float-ico"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"></use></svg></span>
+                            <span>
+                                <b>New job nearby</b>
+                                <small>Kitchen cabinets · 3.2 km · $1,200–$1,800</small>
+                            </span>
+                        </div>
+                        <div class="float-card float--accepted" aria-hidden="true">
+                            <span class="float-ico"><svg class="icon" aria-hidden="true"><use href="#i-check-circle"></use></svg></span>
+                            <span>
+                                <b>Offer accepted</b>
+                                <small>Install 6 Ceiling Lights · $750</small>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reviews" id="reviews">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <p class="eyebrow">Reviews</p>
+                    <h2>Loved on both sides of the job.</h2>
+                </div>
+                <div class="review-grid">
+                    <figure class="review" data-reveal>
+                        <div class="stars" role="img" aria-label="5 out of 5 stars">
+                            <svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg>
+                        </div>
+                        <blockquote>“Exceptional quality of work. On time, cleaned up afterwards and gave us great advice on our smart switch setup.”</blockquote>
+                        <figcaption>
+                            <span class="initials" style="--c: #2e3a59">TP</span>
+                            <span><b>Tadej P.</b>Customer · Ceiling fan installation</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="review" data-reveal style="--d: .08s">
+                        <div class="stars" role="img" aria-label="5 out of 5 stars">
+                            <svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg>
+                        </div>
+                        <blockquote>“Dave was punctual, explained the whole process and resolved our issues safely. Choosing him over the cheapest offer was worth it.”</blockquote>
+                        <figcaption>
+                            <span class="initials" style="--c: #4b4f8f">JK</span>
+                            <span><b>John K.</b>Customer · Fuse box upgrade</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="review" data-reveal style="--d: .16s">
+                        <div class="stars" role="img" aria-label="5 out of 5 stars">
+                            <svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg><svg class="icon"><use href="#i-star"></use></svg>
+                        </div>
+                        <blockquote>“Clear job descriptions, real photos and payment that always arrives on time. Most of my work now comes through HireWise.”</blockquote>
+                        <figcaption>
+                            <span class="initials" style="--c: #7c4a2d">DM</span>
+                            <span><b>Dave M.</b>Licensed electrician on HireWise</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq" id="faq">
+            <div class="wrap faq-grid">
+                <div class="faq-intro" data-reveal>
+                    <p class="eyebrow">FAQ</p>
+                    <h2>Questions? We’ve got answers.</h2>
+                    <p class="lead">Can’t find what you’re looking for? <a href="mailto:hello@hirewise.example">Get in touch</a> and we’ll help.</p>
+                </div>
+                <div class="faq-list" data-reveal>
+                    <details class="faq-item" open>
+                        <summary>Is HireWise free to use?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>Posting a job and receiving offers is free. When you hire, a 5% platform fee is added at checkout — $37.50 on a $750 job — and you’ll always see it before you pay.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>When do I pay the professional?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>When you accept an offer, the payment is authorised and held securely in escrow. It’s released to the pro only after you confirm the job is complete.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How are professionals verified?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>Every pro verifies their identity, phone number and email. Regulated trades such as electricians and plumbers also upload their professional licence, and businesses can add their registration. You’ll see the badges on every offer and profile.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I have to pick the cheapest offer?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>Not at all. Compare price, rating, completed jobs, availability and each pro’s note — or send a counter-offer before you accept. Most customers choose on overall value.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How long does bidding stay open?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>You decide: 2, 6, 12, 24 or 48 hours, or a custom window. Longer windows usually attract more offers, and you can hire a pro at any point.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What if something goes wrong?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>Report a problem from the job screen — a no-show, a dispute, a payment issue or anything else. Our support team reviews every report within 24 hours, and your payment stays protected while we sort it out.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I offer my own services?<span class="faq-icon" aria-hidden="true"></span></summary>
+                        <div class="faq-body">
+                            <p>Yes. Choose “Offer services as a professional” when you sign up, or switch on Professional Mode in Settings at any time to start receiving client jobs.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section download" id="download">
+            <div class="wrap">
+                <div class="download-panel" data-reveal>
+                    <div class="download-copy">
+                        <h2>Your next job, done right.</h2>
+                        <p>Get HireWise for iPhone and Android. Post your first job in about two minutes — and only pay when the work is done.</p>
+                        <div class="store-row">
+                            <a class="store-btn" href="#" aria-label="Download HireWise on the App Store">
+                                <svg viewBox="0 0 384 512" aria-hidden="true" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                                <span><small>Download on the</small>App Store</span>
+                            </a>
+                            <a class="store-btn" href="#" aria-label="Get HireWise on Google Play">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="#fbbc04" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/>
+                                    <path fill="#4285f4" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/>
+                                    <path fill="#34a853" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/>
+                                    <path fill="#ea4335" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/>
+                                </svg>
+                                <span><small>Get it on</small>Google Play</span>
+                            </a>
+                        </div>
+                        <ul class="download-points">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Free to post</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Verified pros</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Escrow-protected payments</li>
+                        </ul>
+                    </div>
+                    <div class="download-visual">
+                        <div class="phone download-phone">
+                            <img src="images/screens/welcome-onboarding.webp" width="720" height="1565" alt="HireWise welcome screen: Find the right pro at the right price" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap footer-grid">
+            <div class="footer-brand">
+                <a class="brand" href="#top" aria-label="HireWise home">
+                    <svg class="brand-mark" aria-hidden="true"><use href="#logo-mark"></use></svg>
+                    <span>HireWise</span>
+                </a>
+                <p>Local pros, competing for your job. Post a job, compare offers from verified professionals and pay only when the work is done.</p>
+            </div>
+            <nav class="footer-col" aria-label="Product">
+                <h3>Product</h3>
+                <a href="#how">How it works</a>
+                <a href="#features">Features</a>
+                <a href="#tour">App tour</a>
+                <a href="#pros">For pros</a>
+            </nav>
+            <nav class="footer-col" aria-label="Help">
+                <h3>Help</h3>
+                <a href="#trust">Trust &amp; safety</a>
+                <a href="#faq">FAQ</a>
+                <a href="mailto:hello@hirewise.example">Contact us</a>
+            </nav>
+            <nav class="footer-col" aria-label="Legal">
+                <h3>Legal</h3>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </nav>
+        </div>
+        <div class="wrap footer-bottom">
+            <p>© 2026 HireWise. All rights reserved.</p>
+            <p>Made in Ljubljana</p>
+        </div>
+    </footer>
 </body>
 </html>
